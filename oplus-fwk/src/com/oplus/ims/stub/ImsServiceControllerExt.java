@@ -12,9 +12,11 @@ import com.oplus.ims.IImsExt;
 import java.util.concurrent.Executor;
 
 public class ImsServiceControllerExt {
+    public Context mContext;
     private final ImsExtStub mImsExtStub;
 
     public ImsServiceControllerExt(Context context, Executor executor) {
+        mContext = context;
         mImsExtStub = new ImsExtStub();
     }
 
