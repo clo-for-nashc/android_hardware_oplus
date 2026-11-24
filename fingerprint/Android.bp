@@ -10,7 +10,8 @@ cc_library_static {
     include_dirs: [
         "frameworks/native/services/surfaceflinger/CompositionEngine/include",
     ],
-    header_libs: [
-        "generated_kernel_headers",
-    ],
+    header_libs: select(soong_config_variable("oplus_udfps", "use_sde_headers"), {
+        false: [],
+        default: ["generated_kernel_headers"],
+    }),
 }
